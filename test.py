@@ -6,8 +6,10 @@ twse_url = "https://www.twse.com.tw/en/exchangeReport/MI_INDEX?response=csv&type
 report = requests.get(twse_url)
 sleep(10)
 
+#log
 print(type(report))
 
+#log
 content_of_report = report.text
 print(type(content_of_report))
 
