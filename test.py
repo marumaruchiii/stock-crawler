@@ -2,18 +2,17 @@ import requests
 from time import sleep
 
 twse_url = "https://www.twse.com.tw/en/exchangeReport/MI_INDEX?response=csv&type=ALLBUT0999&date=20231013"
+tpex_url = "https://www.tpex.org.tw/web/stock/aftertrading/daily_close_quotes/stk_quote_result.php?l=en-us&o=csv&se=EW&s=0,asc,0&d=20231013"
 
-report = requests.get(twse_url)
-sleep(10)
 
-#log
-print(type(report))
+def get_exchange_report(url):
+    report = requests.get(twse_url)
+    sleep(10)
+    content = report.text
+    return content
 
-#log
-content_of_report = report.text
-print(type(content_of_report))
-
-content_str_list = content_of_report.splitlines()
-
-for line in content_str_list: 
+print("### TWSE REPORT ###")
+twse_report = get_exchange_report(twse_url).splitlines()
+for line in twse_report:
     print(line)
+
