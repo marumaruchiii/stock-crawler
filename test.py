@@ -6,7 +6,7 @@ tpex_url = "https://www.tpex.org.tw/web/stock/aftertrading/daily_close_quotes/st
 
 
 def get_exchange_report(url):
-    report = requests.get(twse_url)
+    report = requests.get(url)
     sleep(10)
     content = report.text
     return content
