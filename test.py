@@ -16,3 +16,7 @@ twse_report = get_exchange_report(twse_url).splitlines()
 for line in twse_report:
     print(line)
 
+print("### TPEX REPORT ###")
+tpex_report = get_exchange_report(tpex_url).splitlines()
+for line in tpex_report:
+    print(line)
